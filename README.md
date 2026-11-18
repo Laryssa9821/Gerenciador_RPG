@@ -13,9 +13,7 @@ Jogo de batalha por turnos desenvolvido com **HTML, CSS e JavaScript**. O jogado
 > Depois de adicionar uma imagem do projeto ao repositório, substitua o caminho abaixo pelo nome correto do arquivo.
 
 ```md
-![Tela do jogo](imagens/tela_do_jogo />
->
-)
+![Tela do jogo](imagens/tela_principal/tela_do_jogo.png>)
 ```
 
 ## ✨ Funcionalidades
