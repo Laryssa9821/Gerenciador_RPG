@@ -1,3 +1,4 @@
+
 # ⚔️ Batalha RPG
 
 Jogo de batalha por turnos desenvolvido com **HTML, CSS e JavaScript**. O jogador pode criar um personagem, escolher uma classe e enfrentar inimigos aleatórios em uma arena com animações, barras de vida, habilidades especiais e histórico de combate.
@@ -13,7 +14,7 @@ Jogo de batalha por turnos desenvolvido com **HTML, CSS e JavaScript**. O jogado
 > Depois de adicionar uma imagem do projeto ao repositório, substitua o caminho abaixo pelo nome correto do arquivo.
 
 ```md
-![Tela do jogo](imagens/tela_principal/tela_do_jogo.png>)
+![Tela do jogo]![Uploading tela_do_jogo.png…]()
 ```
 
 ## ✨ Funcionalidades
