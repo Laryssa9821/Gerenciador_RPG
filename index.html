@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Batalha RPG</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="conteudo-cabecalho">
+            <span class="subtitulo-cabecalho">
+                Aventura em JavaScript
+            </span>
+
+            <h1>Batalha RPG</h1>
+
+            <p>
+                Crie seu personagem e enfrente criaturas
+                em uma batalha por turnos.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CRIAÇÃO DO PERSONAGEM -->
+        <section class="painel painel-criacao">
+            <div class="titulo-painel">
+                <div>
+                    <span class="numero-etapa">1</span>
+                </div>
+
+                <div>
+                    <h2>Crie seu personagem</h2>
+
+                    <p>
+                        Escolha um nome e uma classe para
+                        entrar na arena.
+                    </p>
+                </div>
+            </div>
+
+            <form id="formPersonagem">
+                <div class="campo">
+                    <label for="nomePersonagem">
+                        Nome do personagem
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomePersonagem"
+                        placeholder="Ex.: Laryssa"
+                        maxlength="25"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="classePersonagem">
+                        Classe
+                    </label>
+
+                    <select id="classePersonagem" required>
+                        <option value="">
+                            Escolha uma classe
+                        </option>
+
+                        <option value="Guerreiro">
+                            Guerreiro
+                        </option>
+
+                        <option value="Mago">
+                            Mago
+                        </option>
+
+                        <option value="Arqueiro">
+                            Arqueiro
+                        </option>
+                    </select>
+                </div>
+
+                <button
+                    type="submit"
+                    class="botao-criar"
+                >
+                    Criar personagem
+                </button>
+            </form>
+
+            <p
+                id="mensagem"
+                class="mensagem"
+                aria-live="polite"
+            ></p>
+        </section>
+
+        <!-- ARENA -->
+        <section class="painel painel-arena">
+            <div class="titulo-painel titulo-arena">
+                <div>
+                    <span class="numero-etapa">2</span>
+                </div>
+
+                <div>
+                    <h2>Arena de batalha</h2>
+
+                    <p>
+                        Cada ação consome um turno.
+                    </p>
+                </div>
+            </div>
+
+            <div id="arena" class="arena">
+
+                <div class="efeito-cenario"></div>
+
+                <!-- JOGADOR -->
+                <article
+                    id="areaPersonagem"
+                    class="combatente combatente-jogador"
+                >
+                    <div class="status-combatente">
+                        <div class="nome-combatente">
+                            <div>
+                                <span class="rotulo-combatente">
+                                    Jogador
+                                </span>
+
+                                <h3 id="nomeJogador">
+                                    Herói
+                                </h3>
+
+                                <p id="classeJogador">
+                                    Escolha uma classe
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-vida">
+                            <span>Vida</span>
+
+                            <strong id="textoVidaJogador">
+                                0 / 0
+                            </strong>
+                        </div>
+
+                        <div class="barra-vida">
+                            <div
+                                id="barraVidaJogador"
+                                class="vida-atual"
+                            ></div>
+                        </div>
+
+                        <div class="atributos">
+                            <span class="atributo">
+                                Ataque:
+                                <strong id="ataqueJogador">
+                                    0
+                                </strong>
+                            </span>
+
+                            <span class="atributo">
+                                Defesa:
+                                <strong id="defesaJogador">
+                                    0
+                                </strong>
+                            </span>
+
+                            <span class="atributo">
+                                Poções:
+                                <strong id="pocoesJogador">
+                                    0
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="palco-personagem">
+                        <div
+                            id="sombraPersonagem"
+                            class="sombra-personagem"
+                        ></div>
+
+                        <img
+                            id="imagemPersonagem"
+                            class="imagem-combatente imagem-jogador"
+                            src=""
+                            alt=""
+                            hidden
+                        >
+
+                        <p
+                            id="avisoPersonagem"
+                            class="aviso-combatente"
+                        >
+                            Crie um personagem para começar.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="versus" aria-hidden="true">
+                    VS
+                </div>
+
+                <!-- INIMIGO -->
+                <article
+                    id="areaInimigo"
+                    class="combatente combatente-inimigo"
+                >
+                    <div class="status-combatente">
+                        <div class="nome-combatente">
+                            <div>
+                                <span class="rotulo-combatente">
+                                    Inimigo
+                                </span>
+
+                                <h3 id="nomeInimigo">
+                                    Criatura
+                                </h3>
+
+                                <p>Inimigo da arena</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-vida">
+                            <span>Vida</span>
+
+                            <strong id="textoVidaInimigo">
+                                0 / 0
+                            </strong>
+                        </div>
+
+                        <div class="barra-vida">
+                            <div
+                                id="barraVidaInimigo"
+                                class="vida-atual"
+                            ></div>
+                        </div>
+
+                        <div class="atributos">
+                            <span class="atributo">
+                                Ataque:
+                                <strong id="ataqueInimigo">
+                                    0
+                                </strong>
+                            </span>
+
+                            <span class="atributo">
+                                Defesa:
+                                <strong id="defesaInimigo">
+                                    0
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="palco-personagem">
+                        <div
+                            id="sombraInimigo"
+                            class="sombra-personagem"
+                        ></div>
+
+                        <img
+                            id="imagemInimigo"
+                            class="imagem-combatente imagem-inimigo"
+                            src=""
+                            alt=""
+                            hidden
+                        >
+
+                        <p
+                            id="avisoInimigo"
+                            class="aviso-combatente"
+                        >
+                            O inimigo aparecerá aqui.
+                        </p>
+                    </div>
+                </article>
+
+                <div
+                    id="camadaEfeitos"
+                    class="camada-efeitos"
+                ></div>
+            </div>
+        </section>
+
+        <!-- COMBATE -->
+        <section class="painel">
+            <div class="titulo-painel">
+                <div>
+                    <span class="numero-etapa">3</span>
+                </div>
+
+                <div>
+                    <h2>Ações de combate</h2>
+
+                    <p>
+                        Use ataques, habilidades e poções
+                        para vencer a batalha.
+                    </p>
+                </div>
+            </div>
+
+            <div class="acoes-combate">
+                <button
+                    type="button"
+                    id="botaoAtacar"
+                    class="botao-acao botao-atacar"
+                >
+                    <span>⚔</span>
+                    Ataque normal
+                </button>
+
+                <button
+                    type="button"
+                    id="botaoEspecial"
+                    class="botao-acao botao-especial"
+                >
+                    Habilidade especial
+                </button>
+
+                <button
+                    type="button"
+                    id="botaoPocao"
+                    class="botao-acao botao-pocao"
+                >
+                    Usar poção
+                </button>
+
+                <button
+                    type="button"
+                    id="botaoReiniciar"
+                    class="botao-acao botao-reiniciar"
+                >
+                    Nova batalha
+                </button>
+            </div>
+        </section>
+
+        <!-- HISTÓRICO -->
+        <section class="painel">
+            <div class="titulo-painel">
+                <div>
+                    <span class="numero-etapa">4</span>
+                </div>
+
+                <div>
+                    <h2>Histórico da batalha</h2>
+
+                    <p>
+                        Acompanhe todas as ações realizadas.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                id="historicoBatalha"
+                class="historico-batalha"
+                aria-live="polite"
+            >
+                <p class="evento-neutro">
+                    A batalha ainda não começou.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>
+            Projeto desenvolvido com HTML, CSS e JavaScript.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
