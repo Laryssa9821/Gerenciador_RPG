@@ -11,11 +11,11 @@ Jogo de batalha por turnos desenvolvido com **HTML, CSS e JavaScript**. O jogado
 
 ## 📸 Captura de tela
 
-> Depois de adicionar uma imagem do projeto ao repositório, substitua o caminho abaixo pelo nome correto do arquivo.
 
-```md
-![Tela do jogo]![Uploading tela_do_jogo.png…]()
-```
+
+
+<img width="1263" height="832" alt="tela_do_jogo" src="https://github.com/user-attachments/assets/282c0608-08ae-465d-9ef2-eb78a5a26450" />
+
 
 ## ✨ Funcionalidades
 
@@ -115,13 +115,13 @@ gerenciador-rpg/
 ## 💻 Como clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+git clone (https://github.com/Laryssa9821/Gerenciador_RPG)
 ```
 
 Depois, entre na pasta:
 
 ```bash
-cd NOME-DO-REPOSITORIO
+cd Gerenciador_RPG
 ```
 
 ## 🌐 Publicação no GitHub Pages
@@ -164,17 +164,10 @@ cd NOME-DO-REPOSITORIO
 
 ## 🖼️ Créditos das imagens
 
-Adicione aqui a origem e a licença das imagens utilizadas no projeto.
-
-Exemplo:
-
 ```text
-Personagens: nome do autor ou site — tipo de licença
-Inimigos: nome do autor ou site — tipo de licença
-Cenário: nome do autor ou site — tipo de licença
+imagens de personagens, inimigos e cenário são https://www.spritefusion.com/pixel-art-generator
 ```
 
-> Não utilize imagens de jogos comerciais sem autorização. Prefira imagens próprias ou recursos com licença que permita uso no projeto.
 
 ## 👩‍💻 Autora
 
@@ -182,6 +175,4 @@ Cenário: nome do autor ou site — tipo de licença
 
 Projeto desenvolvido para praticar programação web com HTML, CSS e JavaScript.
 
-## 📄 Licença
 
-Este projeto foi criado para fins educacionais. Caso queira disponibilizá-lo como código aberto, adicione um arquivo `LICENSE` ao repositório. A licença MIT é uma opção comum para projetos de estudo.
