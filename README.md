@@ -5,9 +5,7 @@ Jogo de batalha por turnos desenvolvido com **HTML, CSS e JavaScript**. O jogado
 
 ## 🎮 Demonstração
 
-> Adicione aqui o link do projeto publicado no GitHub Pages.
->
-> Exemplo: `https://seu-usuario.github.io/batalha-rpg/`
+> https://laryssa9821.github.io/Gerenciador_RPG/
 
 ## 📸 Captura de tela
 
